@@ -2,9 +2,11 @@ package com.develogical.camera;
 
 public class Camera {
     private final Sensor sensor;
+    private final MemoryCard memCard;
 
-    public Camera(final Sensor sensor) {
+    public Camera(final Sensor sensor, final MemoryCard memCard) {
         this.sensor = sensor;
+        this.memCard = memCard;
     }
 
     public void pressShutter() {
@@ -16,7 +18,7 @@ public class Camera {
     }
 
     public void powerOff() {
-       // not implemented
+       this.sensor.powerDown();
     }
 }
 
