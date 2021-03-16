@@ -16,4 +16,14 @@ public class CameraTest {
 
         verify(sensor, times(1)).powerUp();
     }
+
+    @Test
+    public void switchingTheCameraOffPowersDownTheSensor() {
+        final Sensor sensor = Mockito.mock(Sensor.class);
+        final Camera cam = new Camera(sensor);
+
+        cam.powerOff();
+
+        verify(sensor, times(1)).powerDown();
+    }
 }
