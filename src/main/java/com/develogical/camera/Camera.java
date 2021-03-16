@@ -10,7 +10,7 @@ public class Camera {
     }
 
     public void pressShutter() {
-        // not implemented
+        this.memCard.write(sensor.readData(), null);
     }
 
     public void powerOn() {
