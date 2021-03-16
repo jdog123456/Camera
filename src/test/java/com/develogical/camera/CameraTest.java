@@ -38,6 +38,7 @@ public class CameraTest {
         cam.powerOn();
         cam.pressShutter();
 
+        verify(sensor, times(1)).readData();
         verify(memCard, times(1)).write(any(), any());
     }
 }
